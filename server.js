@@ -1,15 +1,12 @@
-const express = requere('express');
+const express = require('express');
+const path = require('path');
+const nomeApp = process.env.npm_package_name;
+const app = express();
 
-const app = exrepress();
+app.use(express.static(`${__dirname}/dist/${nomeApp}`));
 
-const appName = 'angular-lista-projetos';
-
-const outputPath = `${__dirname}/dist/${appName}`
-
-app.use(express.static(outputPath));
-
-app.get('*', (req, res) => {
-    res.sendFile(`${outputPath}/index.html`);
+app.get('/*', (req, res) => {
+res.sendFile(path.join(`${__dirname}/dist/${nomeApp}/index.html`));
 });
 
-app.listen(process.env.PORT);
+app.listen(process.env.PORT || 8080);
