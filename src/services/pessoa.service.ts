@@ -16,7 +16,7 @@ export class PessoaService {
   //TESTE LOCAIS:
   // private API: string = 'https://localhost:44372/api/Pessoa';
 
-  private API: string = 'https://listacontatos20221216155214.azurewebsites.net/api/Pessoa';
+  private API: string = 'https://listacontatosapi.azurewebsites.net/api/Pessoa';
 
   constructor(private httpClient: HttpClient){}
 
